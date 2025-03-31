@@ -35,6 +35,8 @@ public class LeapYearTest {
     }
 
     private boolean leapYear(final int year) {
-        throw new IllegalStateException("자연수만 입력할 수 있습니다.");
+        if (0 == year || 0 > year)
+            throw new IllegalStateException("자연수만 입력할 수 있습니다.");
+        return false;
     }
 }
