@@ -50,6 +50,14 @@ public class LeapYearTest {
         assertThat(leapYear(2000)).isTrue();
     }
 
+    @Test
+    @DisplayName("4로 나누어지지 않으면 false를 반환한다.")
+    public void case4() {
+        assertThat(leapYear(7)).isFalse();
+        assertThat(leapYear(1998)).isFalse();
+        assertThat(leapYear(2025)).isFalse();
+    }
+
     private boolean leapYear(final int year) {
         if (0 == year || 0 > year)
             throw new IllegalStateException("자연수만 입력할 수 있습니다.");
