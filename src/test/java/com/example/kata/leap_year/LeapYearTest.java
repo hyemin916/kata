@@ -3,6 +3,7 @@ package com.example.kata.leap_year;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /**
@@ -25,7 +26,15 @@ public class LeapYearTest {
                 .isEqualTo("자연수만 입력할 수 있습니다.");
     }
 
-    private void leapYear(final int year) {
+    @Test
+    @DisplayName("100으로 나누어지면 false를 반환한다.")
+    public void case1() {
+        assertThat(leapYear(100)).isFalse();
+        assertThat(leapYear(200)).isFalse();
+        assertThat(leapYear(1000)).isFalse();
+    }
+
+    private boolean leapYear(final int year) {
         throw new IllegalStateException("자연수만 입력할 수 있습니다.");
     }
 }
