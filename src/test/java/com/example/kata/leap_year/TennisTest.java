@@ -13,6 +13,7 @@ public class TennisTest {
     }
 
     private String tennis(final int score1, final int score2) {
+        if (0 == score1 && 0 == score2) return "Love : Love";
         return "";
     }
 }
