@@ -53,6 +53,7 @@ public class LeapYearTest {
     private boolean leapYear(final int year) {
         if (0 == year || 0 > year)
             throw new IllegalStateException("자연수만 입력할 수 있습니다.");
+        if (0 == year % 400) return true;
         if (0 == year % 100) return false;
         return 0 == year % 4;
     }
