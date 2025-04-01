@@ -16,6 +16,7 @@ public class TennisTest {
     @DisplayName("스코어가 1:3이면 Fifteen : Thirty로 표시된다.")
     public void case1() {
         assertThat(tennis(1, 3)).isEqualTo("Fifteen : Thirty");
+        assertThat(tennis(3, 1)).isEqualTo("Thirty : Fifteen");
     }
 
     private String tennis(final int score1, final int score2) {
