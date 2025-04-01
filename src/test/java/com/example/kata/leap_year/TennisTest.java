@@ -20,14 +20,13 @@ public class TennisTest {
     }
 
     private String tennis(final int score1, final int score2) {
-        String score1Name = "";
-        String score2Name = "";
-        if (0 == score1) score1Name = "Love";
-        if (1 == score1) score1Name = "Fifteen";
-        if (2 == score1) score1Name = "Thirty";
-        if (0 == score2) score2Name = "Love";
-        if (1 == score2) score2Name = "Fifteen";
-        if (2 == score2) score2Name = "Thirty";
-        return score1Name + " : " + score2Name;
+        return printScore(score1) + " : " + printScore(score2);
+    }
+
+    private String printScore(final int score1) {
+        if (0 == score1) return "Love";
+        if (1 == score1) return "Fifteen";
+        if (2 == score1) return "Thirty";
+        return "";
     }
 }
