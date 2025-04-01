@@ -26,6 +26,7 @@ public class TennisTest {
     }
 
     private String tennis(final int score1, final int score2) {
+        if (3 == score1 && 3 == score2) return "Deuce";
         return printScore(score1) + " : " + printScore(score2);
     }
 
