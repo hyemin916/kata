@@ -29,10 +29,14 @@ public class TennisTest {
     }
 
     @Test
-    @DisplayName("스코어가 4:3이면 Advantage로 표시된다.")
+    @DisplayName("각 플레이어의 점수가 3점 이상이고 1점차가 나면 Advantage로 표시된다.")
     public void case3() {
         assertThat(tennis(4, 3)).isEqualTo("Advantage");
         assertThat(tennis(3, 4)).isEqualTo("Advantage");
+        assertThat(tennis(4, 5)).isEqualTo("Advantage");
+        assertThat(tennis(5, 4)).isEqualTo("Advantage");
+        assertThat(tennis(6, 5)).isEqualTo("Advantage");
+        assertThat(tennis(5, 6)).isEqualTo("Advantage");
     }
 
     @Test
