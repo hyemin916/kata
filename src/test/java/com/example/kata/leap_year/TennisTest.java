@@ -40,10 +40,14 @@ public class TennisTest {
     }
 
     @Test
-    @DisplayName("스코어가 4:2이면 A Win, 2:4이면 B Win으로 표시된다.")
+    @DisplayName("한 플레이어의 점수가 4점 이상이고 상대편 플레이어보다 2점 높으면 승리한다.")
     public void case5() {
         assertThat(tennis(4, 2)).isEqualTo("A Win");
         assertThat(tennis(2, 4)).isEqualTo("B Win");
+        assertThat(tennis(3, 5)).isEqualTo("B Win");
+        assertThat(tennis(5, 3)).isEqualTo("A Win");
+        assertThat(tennis(4, 6)).isEqualTo("B Win");
+        assertThat(tennis(7, 5)).isEqualTo("A Win");
     }
 
     private String tennis(final int score1, final int score2) {
