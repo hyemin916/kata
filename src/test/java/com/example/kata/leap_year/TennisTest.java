@@ -13,14 +13,21 @@ public class TennisTest {
     }
 
     @Test
-    @DisplayName("스코어가 1:3이면 Fifteen : Thirty로 표시된다.")
+    @DisplayName("스코어가 1:2이면 Fifteen : Thirty로 표시된다.")
     public void case1() {
-        assertThat(tennis(1, 3)).isEqualTo("Fifteen : Thirty");
-        assertThat(tennis(3, 1)).isEqualTo("Thirty : Fifteen");
+        assertThat(tennis(1, 2)).isEqualTo("Fifteen : Thirty");
+        assertThat(tennis(2, 1)).isEqualTo("Thirty : Fifteen");
     }
 
     private String tennis(final int score1, final int score2) {
-        if (0 == score1 && 0 == score2) return "Love : Love";
-        return "";
+        String score1Name = "";
+        String score2Name = "";
+        if (0 == score1) score1Name = "Love";
+        if (1 == score1) score1Name = "Fifteen";
+        if (2 == score1) score1Name = "Thirty";
+        if (0 == score2) score2Name = "Love";
+        if (1 == score2) score2Name = "Fifteen";
+        if (2 == score2) score2Name = "Thirty";
+        return score1Name + " : " + score2Name;
     }
 }
