@@ -46,6 +46,8 @@ public class TennisTest {
     }
 
     private String tennis(final int score1, final int score2) {
+        if (4 <= score1 && score1 == score2 + 2) return "A Win";
+        if (4 <= score2 && score2 == score1 + 2) return "B Win";
         if (3 <= score1 && 3 <= score2 && score1 == score2) return "Deuce";
         if (3 <= score1 && 3 <= score2 && 1 == Math.abs(score1 - score2)) return "Advantage";
         return printScore(score1) + " : " + printScore(score2);
