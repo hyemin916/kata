@@ -1,4 +1,4 @@
-package com.example.kata.leap_year;
+package com.example.kata;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
