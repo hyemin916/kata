@@ -25,6 +25,13 @@ public class TennisTest {
         assertThat(tennis(3, 3)).isEqualTo("Deuce");
     }
 
+    @Test
+    @DisplayName("스코어가 4:3이면 Advantage로 표시된다.")
+    public void case3() {
+        assertThat(tennis(4, 3)).isEqualTo("Advantage");
+        assertThat(tennis(3, 4)).isEqualTo("Advantage");
+    }
+
     private String tennis(final int score1, final int score2) {
         if (3 == score1 && 3 == score2) return "Deuce";
         return printScore(score1) + " : " + printScore(score2);
