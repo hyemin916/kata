@@ -20,9 +20,12 @@ public class TennisTest {
     }
 
     @Test
-    @DisplayName("스코어가 3:3이면 Deuce로 표시된다.")
+    @DisplayName("각 플레이어의 점수가 3점 이상이고 동점이면 Deuce로 표시된다.")
     public void case2() {
         assertThat(tennis(3, 3)).isEqualTo("Deuce");
+        assertThat(tennis(4, 4)).isEqualTo("Deuce");
+        assertThat(tennis(5, 5)).isEqualTo("Deuce");
+        assertThat(tennis(6, 6)).isEqualTo("Deuce");
     }
 
     @Test
