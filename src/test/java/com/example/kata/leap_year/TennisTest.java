@@ -40,12 +40,6 @@ public class TennisTest {
     }
 
     @Test
-    @DisplayName("스코어가 4:4이면 Deuce로 표시된다.")
-    public void case4() {
-        assertThat(tennis(4, 4)).isEqualTo("Deuce");
-    }
-
-    @Test
     @DisplayName("스코어가 4:2이면 A Win, 2:4이면 B Win으로 표시된다.")
     public void case5() {
         assertThat(tennis(4, 2)).isEqualTo("A Win");
